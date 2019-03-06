@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get "resume" => "portfolio#resume"
   get "resume/view" => "portfolio#view_resume"
   get "projects" => "portfolio#projects"
-  get "contact" => "portfolio#contact"
+  get "contact" => "contacts#new"
 end
