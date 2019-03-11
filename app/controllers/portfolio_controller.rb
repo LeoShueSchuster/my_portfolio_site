@@ -1,17 +1,25 @@
 class PortfolioController < ApplicationController
     def index
+        @contact = Contact.new
     end
 
     def resume
     end
 
     def view_resume
-        send_file '/home/leo/my_portfolio_site/app/assets/images/Leo_Schuster_Resume.pdf', type: 'application/pdf', disposition: 'inline'
     end
 
     def projects
     end
 
     def contact
+        @contact = Contact.new(params[:contact])
+        @contact.request = request
+        if @contact.deliver
+            flash.now[:error] = nil
+        else
+            flash.now[:error] = nil
+            render :new
+        end
     end
 end
