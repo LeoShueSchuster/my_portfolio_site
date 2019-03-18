@@ -1,15 +1,7 @@
 class PortfolioController < ApplicationController
     def index
         @contact = Contact.new
-    end
-
-    def resume
-    end
-
-    def view_resume
-    end
-
-    def projects
+        @projects = Project.all
     end
 
     def contact

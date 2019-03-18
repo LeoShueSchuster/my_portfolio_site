@@ -1,0 +1,24 @@
+<%= link_to("Go Back to Home", root_path) %>
+<h5><br>Create a new project</h5>
+
+<%= form_for(@project) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, size: 40 %>
+  </p>
+    <p>
+    <%= f.label :credit %><br/>
+    <%= f.text_field :credit, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, cols:40, rows: 7 %>
+  </p>
+    <p>
+    <%= f.label :link %><br/>
+    <%= f.text_field :link, size: 40 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
