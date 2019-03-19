@@ -12,10 +12,11 @@
 </p>
 <hr>
 
-<h3>Here is a list of projects I have been working on over the years.</h3>
+<h3>Projects I have been working on over the years:</h3>
 <ul>
 <% @projects.each do |project| %>
-    <li>
+    <li class="list-inline-item">
+        <i class="fas fa-chevron-circle-right"></i>
         <strong><%= project.name %></strong> (My role: <%= project.credit %>)<br>
         <% if current_user_admin? %>
             <%= link_to "[***Edit***]", edit_project_path(project) %>
