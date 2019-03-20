@@ -1,26 +1,32 @@
-<h2 class="mb-5">Contact Leo</h2>
-<div class="skinny_wrapper wrapper_padding">
-        <%= form_for @contact do |f| %>
-            <%= f.label :name %><br>
-            <%= f.text_field :name, required: true, size:40 %>
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="contact">
+    <div class="w-100">
+    
+        <h2 class="mb-5">Contact Leo</h2>
+        <div class="skinny_wrapper wrapper_padding">
+                <%= form_for @contact do |f| %>
+                    <%= f.label :name %><br>
+                    <%= f.text_field :name, required: true, size:40 %>
 
-            <br>
+                    <br>
 
-            <%= f.label :email %><br>
-            <%= f.email_field :email, required: true, size: 40 %>
-            
-            <br>
+                    <%= f.label :email %><br>
+                    <%= f.email_field :email, required: true, size: 40 %>
+                    
+                    <br>
 
-            <%= f.label :message %><br>
-            <%= f.text_area :message, as: :text, cols:40, rows: 7 %>
+                    <%= f.label :message %><br>
+                    <%= f.text_area :message, as: :text, cols:40, rows: 7 %>
 
-            <div class="hidden">
-                <%= f.label :nickname %><br>
-                <%= f.text_field :nickname, hint: 'leave this field blank' %>
-            </div>
+                    <div class="hidden">
+                        <%= f.label :nickname %><br>
+                        <%= f.text_field :nickname, hint: 'leave this field blank' %>
+                    </div>
 
-            <br>
+                    <br>
 
-            <%= f.submit 'Send Message', class: "button" %>
-        <% end %>
-</div>
+                    <%= f.submit 'Send Message', class: "button" %>
+                <% end %>
+        </div>
+
+    </div>
+</section>

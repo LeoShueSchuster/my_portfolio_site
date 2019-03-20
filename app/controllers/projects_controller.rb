@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
     before_action :require_signin, except: [:index, :show, :contact]
     before_action :require_admin, except: [:index, :show, :contact]
+    
     def index
         @contact = Contact.new
         @projects = Project.all

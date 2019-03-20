@@ -22,10 +22,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
 
-# Use for Contact Me page, tied to my email
+# Use ActiveModel has_secure_password, which let's me use password_digest
+gem 'bcrypt', '~> 3.1.7'
+# Use for Contact Leo page, tied to my Gmail
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 # Use for web design
 gem 'bootstrap', '~> 4.3.1'
