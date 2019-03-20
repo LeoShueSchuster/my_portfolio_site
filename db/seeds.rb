@@ -10,12 +10,14 @@ Project.create!([
     { 
         name: 'The Latinx Mental Health Podcast',
         link: 'https://www.latinxmhpodcast.com/',
-        credit: 'Producer, Audio Engineer' 
+        credit: 'Producer, Audio Engineer',
+        description: 'Hi'
     },
     { 
         name: 'Enlaces Latinos',
         link: 'https://www.facebook.com/Enlaces-Latinos-155778007772062/',
-        credit: 'Bass Guitarist' 
+        credit: 'Bass Guitarist',
+        description: 'Hello'
     }
 ])
 
