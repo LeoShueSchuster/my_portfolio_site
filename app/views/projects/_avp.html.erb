@@ -16,16 +16,16 @@
 
         <h3>Projects I have been working on over the years:</h3>
         <ul>
-        <% @projects.each do |project| %>
+        <% @projects.each do |p| %>
             <li class="list-inline-item">
                 <i class="fas fa-chevron-circle-right"></i>
-                <strong><%= project.name %></strong> (My role: <%= project.credit %>)<br>
+                <strong><%= p.name %></strong> (My role: <%= p.credit %>)<br>
                 <% if current_user_admin? %>
-                    <%= link_to "[***Edit***]", edit_project_path(project) %>
-                    <%= link_to "[***Delete***]", project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                    <%= link_to "[***Edit***]", edit_project_path(p) %>
+                    <%= link_to "[***Delete***]", project_path(p), method: :delete, data: { confirm: 'Are you sure?' } %><br>
                 <% end %>
-                <%= project.description %><br><br>
-                Find out more at: <%= link_to project.link %>
+                <%= p.description %><br><br>
+                Find out more at: <%= link_to p.link %>
             </li>
             <hr>
         <% end %>
