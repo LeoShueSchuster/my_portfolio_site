@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resource :session
   resources :projects
   resources :contacts, only: [:new, :create]
-  root "projects#index"
-  get "home" => "projects#index"
+  root "home#index"
   patch "projects/:id" => "projects#update"
   get   "projects/new" => "projects#new"
 end

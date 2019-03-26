@@ -1,22 +1,6 @@
 class ProjectsController < ApplicationController
-    before_action :require_signin, except: [:index, :show, :contact]
-    before_action :require_admin, except: [:index, :show, :contact]
-    
-    def index
-        @contact = Contact.new
-        @projects = Project.all
-    end
-
-    def contact
-        @contact = Contact.new(params[:contact])
-        @contact.request = request
-        if @contact.deliver
-            flash.now[:error] = nil
-        else
-            flash.now[:error] = nil
-            render :new
-        end
-    end
+    before_action :require_signin, except: [:index, :show]
+    before_action :require_admin, except: [:index, :show]
     
     def edit
         @project = Project.find(params[:id])
