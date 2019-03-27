@@ -23,7 +23,7 @@ Project.create!([
 
 User.create!([
     {
-        name: 'Leo (Admin)',
+        name: 'Leo [***Admin***]',
         password: 'directControl',
         password_confirmation: 'directControl',
         email: 'leoshueschuster@gmail.com',
