@@ -24,8 +24,8 @@ Project.create!([
 User.create!([
     {
         name: 'Leo (Admin)',
-        password: 'temp',
-        password_confirmation: 'temp',
+        password: 'directControl',
+        password_confirmation: 'directControl',
         email: 'leoshueschuster@gmail.com',
         admin: true
     }

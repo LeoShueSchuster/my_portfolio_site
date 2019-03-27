@@ -1,5 +1,10 @@
 <header id="content-header">
-  <h3><%= pluralize(@users.size, 'User') %></h3>
+  <% if current_user %>
+    Logged in as: <%= link_to current_user.name, current_user %> | 
+    <%= link_to '[***Sign Out***]', session_path, method: :delete, class: 'button' %> | 
+    <%= link_to "[***Visit Site***]", "home" %>
+  <% end %>
+  <h3><br><%= pluralize(@users.size, 'User') %></h3>
 </header>
 
 <ul id="users">

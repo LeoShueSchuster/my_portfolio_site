@@ -14,16 +14,16 @@ describe "Viewing the list of projects" do
             text: "I perform with the Hernandez family band with my electric bass guitar. We play music from throughout Latin America."
         )
 
-        visit projects_url
+        visit "home"
 
         expect(page).to have_text("Audio Visual Production Projects")
+        
         expect(page).to have_text(project1.name)
-        expect(page).to have_text(project2.name)
-
         expect(page).to have_text(project1.link)
         expect(page).to have_text(project1.credit)
         expect(page).to have_text(project1.text)
 
+        expect(page).to have_text(project2.name)
         expect(page).to have_text(project2.link)
         expect(page).to have_text(project2.credit)
         expect(page).to have_text(project2.text)

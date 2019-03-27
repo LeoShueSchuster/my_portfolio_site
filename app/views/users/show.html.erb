@@ -2,5 +2,11 @@
   <header>
     <h3><%= @user.name %></h3>
     <h4><%= mail_to(@user.email) %></h4>
+    <%= link_to '[***Delete User***]', @user,
+                method: :delete,
+                data: { confirm: 'Are you sure you want to permanently delete your account?' },
+                class: 'button' %>
+    <br><br>
+    <%= link_to '[***List All Users***]', users_path%>
   </header>
 </article>
