@@ -6,16 +6,18 @@
           <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
         <% end %>
         </p>
-        <h1 class="mb-0">Leo Shue
-          <span class="text-primary">Schuster</span>
+        <h1 class="mb-0"><%= @about.first_name %>
+          <span class="text-primary"><%= @about.last_name %></span>
         </h1>
-        <div class="subheading mb-5">1901 Crossing Place · Austin, TX 78741 · (512) 241-9041 ·
-          <a href="mailto:leoshueschuster@gmail.com">leoshueschuster@gmail.com</a>
+        <div class="subheading mb-5"><%= @about.address %> · <%= @about.location_zip %> · <%= @about.phone %> ·
+          <a href="mailto:<%= @about.email %>"><%= @about.email %></a>
         </div>
-        <p class="lead mb-5">Hey there! I’ve been living in Austin for 17 years. 
-        I recently graduated from Texas State University with a bachelor’s degree in Computer Science. 
-        I enjoy spending my free time playing board games, going on hikes, and recording podcasts.
+        <p>
+        <% if current_user_admin? %>
+          <%= link_to "[***Edit About section***]", edit_about_path(@about)%>
+        <% end %>
         </p>
+        <p class="lead mb-5"><%= @about.description %></p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/leo-schuster">
             <i class="fab fa-linkedin-in"></i>

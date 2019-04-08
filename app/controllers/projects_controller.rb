@@ -1,6 +1,14 @@
-class ProjectsController < ApplicationController
+class ProjectsController < HomeController
     before_action :require_signin, except: [:index, :show]
     before_action :require_admin, except: [:index, :show]
+
+    def sort
+        params[:project].each_with_index do |id, index|
+            Project.where(id: id).update_all(position: index + 1)
+        end
+
+        head :ok
+    end
     
     def edit
         @project = Project.find(params[:id])

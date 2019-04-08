@@ -16,19 +16,21 @@
 
         <h3>Projects I have been working on over the years:</h3>
         <ul>
-        <% @projects.each do |p| %>
-            <li class="list-inline-item">
-                <i class="fas fa-chevron-circle-right"></i>
-                <strong><%= p.name %></strong> (My role: <%= p.credit %>)<br>
-                <% if current_user_admin? %>
-                    <%= link_to "[***Edit***]", edit_project_path(p) %>
-                    <%= link_to "[***Delete***]", project_path(p), method: :delete, data: { confirm: 'Are you sure?' } %><br>
-                <% end %>
-                <%= p.description %><br><br>
-                Find out more at: <%= link_to p.link %>
-            </li>
-            <hr>
-        <% end %>
+        <div id="projects" data-url="<%= sort_projects_path %>" >
+            <% @projects.each do |p| %>
+                <li class="list-inline-item">
+                    <i class="fas fa-chevron-circle-right"></i>
+                    <strong><%= p.name %></strong> (My role: <%= p.credit %>)<br>
+                    <% if current_user_admin? %>
+                        <%= link_to "[***Edit***]", edit_project_path(p), id: dom_id(p) %>
+                        <%= link_to "[***Delete***]", project_path(p), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                    <% end %>
+                    <%= p.description %><br><br>
+                    Find out more at: <%= link_to p.link %>
+                    <hr>
+                </li>
+            <% end %>
+        </div>
         </ul>
 
     </div>

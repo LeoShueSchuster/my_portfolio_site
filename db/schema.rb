@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_172248) do
+ActiveRecord::Schema.define(version: 2019_04_02_145752) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "location_zip"
+    t.string "phone"
+    t.string "email"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "title"
+    t.string "date"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_descriptions", force: :cascade do |t|
+    t.string "description"
+    t.integer "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_job_descriptions_on_experience_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
@@ -19,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_172248) do
     t.datetime "updated_at", null: false
     t.string "link"
     t.text "credit"
+    t.integer "position"
   end
 
   create_table "users", force: :cascade do |t|

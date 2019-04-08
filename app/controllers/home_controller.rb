@@ -1,7 +1,11 @@
 class HomeController < ApplicationController
 
     def index
-        @projects = Project.all
+        @about = About.first
+
+        @experiences = Experience.all
+
+        @projects = Project.order(:position)
 
         @contact = Contact.new
     end

@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class ContactsController < HomeController
     def new
         @contact = Contact.new
     end

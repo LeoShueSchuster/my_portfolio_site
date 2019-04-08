@@ -1,0 +1,36 @@
+<%= link_to("Go Back to Home", root_path) %>
+<h5><br>Editing About section:</h5>
+
+<%= form_for(@about) do |f| %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :address %><br/>
+    <%= f.text_field :address, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :location_zip %><br/>
+    <%= f.text_field :location_zip, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :phone %><br/>
+    <%= f.text_field :phone, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.text_field :email, size: 40 %>
+  </p>
+    <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, cols:40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

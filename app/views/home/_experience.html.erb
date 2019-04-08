@@ -1,49 +1,29 @@
 <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
+  <div class="w-100">
+    <h2 class="mb-5">Experience</h2>
+    <% if current_user_admin? %>
+      <p><%= link_to("[***Add New Experience***]", new_experience_path) %><br></p>
+    <% end %>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Engineer Intern</h3>
-            <div class="subheading mb-3">CareerPlug - Austin, TX</div>
-            <p><i class="fas fa-chevron-circle-right"></i> Programming like nobody's business<br>
-               <i class="fas fa-chevron-circle-right"></i> Embodied core values Hiring Easier, Impactful Teaching, Exceptional Experiences, Quality Hires, and Baldridge Excellence<br>
-               <i class="fas fa-chevron-circle-right"></i> Improve app performance upgrading architecture using AWS
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">January 2019 - Present</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Families Learning Together Workshop Facilitator</h3>
-            <div class="subheading mb-3">Dr. Sean Justice, Texas State University - San Marcos, TX</div>
-            <p><i class="fas fa-chevron-circle-right"></i> Built sustainable computational fluency in classrooms and communities<br>
-               <i class="fas fa-chevron-circle-right"></i> Interacted with children ages 9-12 and their families to teach coding using MIT’s Scratch<br>
-               <i class="fas fa-chevron-circle-right"></i> Facilitated over twenty FLT Scratch workshops at three locations in central Texas area
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">April 2017 - July 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
-          <div class="resume-content">
-            <h3 class="mb-0">Instructional Technologies Support Head Lab Assistant</h3>
-            <div class="subheading mb-3">Learning Spaces division, Texas State University - San Marcos, TX</div>
-            <p><i class="fas fa-chevron-circle-right"></i> Supervised and trained lab assistants in seven computer labs across campus<br>
-               <i class="fas fa-chevron-circle-right"></i> Inventoried supplies and equipment in computer labs and storage facilities to update FileMaker Pro platform<br>
-               <i class="fas fa-chevron-circle-right"></i> Served as liaison between ITS help desk and patrons to assure functioning computers and printers
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">August 2015 - July 2018</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
+        <% @experiences.each do |e| %>
+            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+              <div class="resume-content">
+                <h3 class="mb-0"><%= e.title %></h3>
+                <% if current_user_admin? %>
+                  <%= link_to "[***Edit***]", edit_experience_path(e) %>
+                  <%= link_to "[***Delete***]", experience_path(e), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                <% end %>
+                <div class="subheading mb-3"><%= e.location %></div>
+                <p>
+                  <% e.job_descriptions.each do |jd| %>
+                    <i class="fas fa-chevron-circle-right"></i> <%= jd.description %><br>
+                  <% end %>
+                </p>
+              </div>
+              <div class="resume-date text-md-right">
+                <span class="text-primary"><%= e.date %></span>
+              </div>
+            </div>
+        <% end %>
+  </div>
+</section>

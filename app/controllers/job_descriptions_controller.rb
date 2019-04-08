@@ -1,0 +1,3 @@
+class JobDescriptionsController < ExperiencesController
+    
+end

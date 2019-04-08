@@ -1,0 +1,26 @@
+<%= link_to("Go Back to Home", root_path) %>
+<h5><br>Editing Experience: <%= @experience.title %></h5>
+
+<%= form_for(@experience) do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :date %><br/>
+    <%= f.text_field :date, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :location %><br/>
+    <%= f.text_field :location, size: 40 %>
+  </p>
+  <%= f.fields_for :job_descriptions do |f| %>
+    <p>
+      <%= render 'job_description_fields', f: f%>
+    </p>
+  <% end %>
+  <p>
+    <%= link_to_add_fields 'Add a Description', f, :job_descriptions %><br><br>
+    <%= f.submit %>
+  </p>
+<% end %>
