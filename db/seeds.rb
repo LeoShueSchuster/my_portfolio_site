@@ -45,5 +45,3 @@ Project.create!([
         description: 'I perform with the Hernandez family band with my electric bass guitar. We play music from throughout Latin America.'
     }
 ])
-
-])
