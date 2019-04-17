@@ -1,6 +1,9 @@
 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="contact">
     <div class="w-100">
-    
+        <% if flash[:alert] %>
+            <div class="flash alert"><%= flash[:alert] %></div>
+        <% end %>
+        
         <h2 class="mb-5">Contact Leo</h2>
         <div class="skinny_wrapper wrapper_padding">
                 <%= form_for @contact do |f| %>

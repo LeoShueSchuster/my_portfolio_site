@@ -22,6 +22,12 @@
 
   <div class="container-fluid p-0">
 
+    <% if flash[:alert] %>
+      <div class="flash alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= render 'nameplate' %>
 
     <hr class="m-0">

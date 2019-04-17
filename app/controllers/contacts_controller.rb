@@ -7,9 +7,9 @@ class ContactsController < HomeController
         @contact = Contact.new(params[:contact])
         @contact.request = request
         if @contact.deliver
-            flash.now[:error] = nil
+            flash.now[:alert] = nil
         else
-            flash.now[:error] = nil
+            flash.now[:alert] = nil
             render :new
         end
     end
