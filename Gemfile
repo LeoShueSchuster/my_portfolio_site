@@ -49,9 +49,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Use sqlite3 as the database for Active Record
-  gem 'rspec-rails', '3.8.0'
-  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :development do
@@ -66,6 +63,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.7.1'
+  gem 'rspec-rails', '3.8.0'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

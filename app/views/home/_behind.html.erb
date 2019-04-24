@@ -19,7 +19,10 @@
 
         <p>
             The template kept me focused by providing a scrolling one-page site structure where I knew what I had to do next.
-            I changed the color scheme to fit my taste. With CareerPlug's guidance I implemented models, an e-mail contact form, and admin functionalities to let me edit on the fly.
+            I changed the color scheme to fit my taste. With CareerPlug's guidance I implemented models, an e-mail contact form, and admin functionalities to let me edit on the fly once deployed.
+            I originally started with a local SQLite3 database, but I have now transitioned into using a local PostgreSQL database and Heroku Postgres DB once deployed.
+            The contact form was made with gem 'mail_form' in tandem with Heroku's plugin SendGrid.
+            I completed unit testing with RSpec and Capybara while checking test coverage progress with SimpleCov. I tracked down security vulnerabilities using Brakeman.
         </p>
 
         <p><i class="fas fa-chevron-circle-right"></i> The codebase can be found at <a target="_blank" href="https://github.com/LeoShueSchuster/my_portfolio_site">GitHub</a>.</p>

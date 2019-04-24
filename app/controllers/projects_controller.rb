@@ -4,13 +4,13 @@ class ProjectsController < HomeController
   before_action :require_signin, except: %i[index show]
   before_action :require_admin, except: %i[index show]
 
-  def sort
-    params[:project].each_with_index do |id, index|
-      Project.where(id: id).update_all(position: index + 1)
-    end
+  # def sort
+  #   params[:project].each_with_index do |id, index|
+  #     Project.where(id: id).update_all(position: index + 1)
+  #   end
 
-    head :ok
-  end
+  #   head :ok
+  # end
 
   def edit
     @project = Project.find(params[:id])

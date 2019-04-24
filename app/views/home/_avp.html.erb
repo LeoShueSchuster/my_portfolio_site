@@ -22,8 +22,8 @@
                     <i class="fas fa-chevron-circle-right"></i>
                     <strong><%= p.name %></strong> (My role: <%= p.credit %>)<br>
                     <% if current_user_admin? %>
-                        <%= link_to "[***Edit***]", edit_project_path(p), id: dom_id(p) %>
-                        <%= link_to "[***Delete***]", project_path(p), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                        <%= link_to "[***Edit Project***]", edit_project_path(p), id: dom_id(p) %>
+                        <%= link_to "[***Delete Project***]", project_path(p), method: :delete, data: { confirm: 'Are you sure?' } %><br>
                     <% end %>
                     <%= p.description %><br><br>
                     Find out more at: <%= link_to p.link %>
