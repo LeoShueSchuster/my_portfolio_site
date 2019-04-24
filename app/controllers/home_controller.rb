@@ -1,13 +1,13 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
+  def index
+    @about = About.first
 
-    def index
-        @about = About.first
+    @experiences = Experience.all
 
-        @experiences = Experience.all
+    @projects = Project.order(:position)
 
-        @projects = Project.order(:position)
-
-        @contact = Contact.new
-    end
-    
+    @contact = Contact.new
+  end
 end

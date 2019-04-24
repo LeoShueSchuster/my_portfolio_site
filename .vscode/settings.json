@@ -28,5 +28,9 @@
         "typescript",
         "typescriptreact",
         "yml"
-    ]
+    ],
+    "ruby.rubocop.executePath": "/home/leo/.asdf/installs/ruby/2.6.0/lib/ruby/gems/2.6.0/gems/rubocop-0.67.2/exe/",
+    "ruby.rubocop.configFilePath": "/home/leo/.asdf/installs/ruby/2.6.0/lib/ruby/gems/2.6.0/gems/rubocop-0.67.2/config/default.yml",
+    "ruby.rubocop.onSave": true,
+    "editor.formatOnSave": true
 }

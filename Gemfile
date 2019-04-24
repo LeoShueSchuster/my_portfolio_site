@@ -37,6 +37,9 @@ gem 'acts_as_list'
 # For easy renaming of Controllers
 gem 'rails_refactor'
 gem 'pg'
+gem 'brakeman'
+gem 'rails_best_practices'
+gem 'rubocop-performance'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
