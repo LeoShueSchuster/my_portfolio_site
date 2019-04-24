@@ -5,7 +5,7 @@
       <p><%= link_to("[***Add New Experience***]", new_experience_path) %><br></p>
     <% end %>
 
-        <% @experiences.each do |e| %>
+        <% experiences.each do |e| %>
             <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
               <div class="resume-content">
                 <h3 class="mb-0"><%= e.title %></h3>

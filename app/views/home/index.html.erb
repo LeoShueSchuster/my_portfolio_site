@@ -27,11 +27,11 @@
       </div>
     <% end %>
 
-    <%= render 'nameplate' %>
+    <%= render 'nameplate', :about => @about %>
 
     <hr class="m-0">
 
-    <%= render 'experience' %>
+    <%= render 'experience', :experiences => @experiences %>
 
     <hr class="m-0">
 
@@ -43,11 +43,11 @@
 
     <hr class="m-0">
 
-    <%= render 'avp' %>
+    <%= render 'avp', :projects => @projects %>
 
     <hr class="m-0">
 
-    <%= render 'contact' %>
+    <%= render 'contact', :contact => @contact %>
 
     <hr class="m-0">
 

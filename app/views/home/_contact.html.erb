@@ -3,10 +3,9 @@
         <% if flash[:alert] %>
             <div class="flash alert"><%= flash[:alert] %></div>
         <% end %>
-        
         <h2 class="mb-5">Contact Leo</h2>
         <div class="skinny_wrapper wrapper_padding">
-                <%= form_for @contact do |f| %>
+                <%= form_for contact do |f| %>
                     <%= f.label :name %><br>
                     <%= f.text_field :name, required: true, size:40 %>
 
@@ -14,7 +13,6 @@
 
                     <%= f.label :email %><br>
                     <%= f.email_field :email, required: true, size: 40 %>
-                    
                     <br>
 
                     <%= f.label :message %><br>

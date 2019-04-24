@@ -17,7 +17,7 @@
         <h3>Projects I have been working on over the years:</h3>
         <ul>
         <div id="projects" data-url="<%= sort_projects_path %>" >
-            <% @projects.each do |p| %>
+            <% projects.each do |p| %>
                 <li class="list-inline-item">
                     <i class="fas fa-chevron-circle-right"></i>
                     <strong><%= p.name %></strong> (My role: <%= p.credit %>)<br>

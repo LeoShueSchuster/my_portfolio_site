@@ -2,22 +2,22 @@
       <div class="w-100">
         <p>
         <% if current_user %>
-          Logged in as: <%= link_to current_user.name, current_user %> | 
-          <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
+          Logged in as: <%= link_to current_user.name, current_user %> |
+           <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
         <% end %>
         </p>
-        <h1 class="mb-0"><%= @about.first_name %>
-          <span class="text-primary"><%= @about.last_name %></span>
+        <h1 class="mb-0"><%= about.first_name %>
+          <span class="text-primary"><%= about.last_name %></span>
         </h1>
-        <div class="subheading mb-5"><%= @about.location_zip %> · <%= @about.phone %> ·
-          <a href="mailto:<%= @about.email %>"><%= @about.email %></a>
+        <div class="subheading mb-5"><%= about.location_zip %> · <%= about.phone %> ·
+          <a href="mailto:<%= about.email %>"><%= about.email %></a>
         </div>
         <p>
         <% if current_user_admin? %>
-          <%= link_to "[***Edit About section***]", edit_about_path(@about)%>
+          <%= link_to "[***Edit About section***]", edit_about_path(about)%>
         <% end %>
         </p>
-        <p class="lead mb-5"><%= @about.description %></p>
+        <p class="lead mb-5"><%= about.description %></p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/leo-schuster">
             <i class="fab fa-linkedin-in"></i>
